@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>顏色按鈕改變表單背景</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form {
+      padding: 20px;
+      border: 2px solid #ccc;
+      width: 300px;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+    }
+    .color-btn {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .red { background-color: #e74c3c; }
+    .green { background-color: #27ae60; }
+    .blue { background-color: #2980b9; }
+  </style>
+</head>
+<body>
+
+  <h2>選擇顏色改變表單背景</h2>
+
+  <!-- 顏色按鈕 -->
+  <button class="color-btn red" onclick="changeColor('#e74c3c')">紅色</button>
+  <button class="color-btn green" onclick="changeColor('#27ae60')">綠色</button>
+  <button class="color-btn blue" onclick="changeColor('#2980b9')">藍色</button>
+
+  <!-- 表單 -->
+  <form id="colorForm">
+    <label for="name">姓名：</label><br />
+    <input type="text" id="name" name="name" /><br /><br />
+    
+    <label for="email">電子郵件：</label><br />
+    <input type="email" id="email" name="email" /><br /><br />
+    
+    <input type="submit" value="送出" />
+  </form>
+
+  <script>
+    function changeColor(color) {
+      document.getElementById('colorForm').style.backgroundColor = color;
+    }
+  </script>
+
+</body>
+</html>
